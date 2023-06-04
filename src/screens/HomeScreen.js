@@ -2,9 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import PlayholderWooper from "../../assets/images/placeholder_wooper.png";
 
-const onPress = () => {};
-
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Title TBD</Text>
@@ -14,7 +12,9 @@ export default function HomeScreen() {
         Words Words Words Words Words Words Words Words Words Words Words
       </Text>
 
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('ArgHomeScreen')}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
     </View>
