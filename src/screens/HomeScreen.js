@@ -18,6 +18,7 @@ export default function HomeScreen({ navigation }) {
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
     </View>
+    
   );
 }
 
