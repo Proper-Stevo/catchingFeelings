@@ -1,21 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from "react-native";
 
 import HomeScreen from "./src/screens/HomeScreen.js"
 import ArgHomeScreen from "./src/screens/ArgHomeScreen.js"
 
-
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer >
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="ArgHomeScreen" component={ArgHomeScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="ArgHomeScreen" component={ArgHomeScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
