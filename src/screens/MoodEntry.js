@@ -1,31 +1,38 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Text } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Picker } from "@react-native-picker/picker";
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 export default function MoodEntry() {
-  return (
-    <View style={styles.create}>
-      <Text style={{ textAlign: "center" }}>Whats your mood today?</Text>
-      <Ionicons name="arrow-down" size={24} color="black" style={{ textAlign: "center" }} />
+  const [selectedMood, setSelectedMood] = useState('Mood');
 
+  const handleMoodChange = (value) => {
+    setSelectedMood(value);
+    console.log(value);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={{ textAlign: 'center' }}>What's your mood today?</Text>
       <Picker
         style={{ backgroundColor: 'white', width: 300, height: 215 }}
-        selectedValue='item1'
-        pickerData={['item1', 'item2']}
-        onValueChange={value => { console.log(value) }}
-      />
-
+        selectedValue={selectedMood}
+        onValueChange={handleMoodChange}
+      >
+        <Picker.Item label='Mood' value="Mood"/>
+        <Picker.Item label="Happy" value="Happy" />
+        <Picker.Item label="Sad" value="Sad" />
+        <Picker.Item label="Angry" value="Angry" />
+      </Picker>
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({
-  constainer: {
+const styles = {
+  container: {
     flex: 1,
-    textAlign: "center",
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  }
-})
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+};
