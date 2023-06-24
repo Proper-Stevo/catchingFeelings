@@ -4,7 +4,10 @@ import { StyleSheet } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import HomeScreen from "./src/screens/HomeScreen.js"
-import ArgHomeScreen from "./src/screens/ArgHomeScreen.js"
+import Journals from "./src/screens/Journals.js"
+import MoodEntry from "./src/screens/MoodEntry.js"
+import Calendar from "./src/screens/Calendar.js"
+import Settings from "./src/screens/Settings.js"
 
 const Tab = createBottomTabNavigator();
 
@@ -23,61 +26,51 @@ function App() {
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
-            ),
-          }}
-        />
-        {/* <Tab.Screen 
-          name="Home" 
-          component={HomeScreen} 
-          options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
+              <Ionicons name="md-home-outline" size={24} color="black" />
             ),
           }}
         />
         <Tab.Screen 
-          name="Home" 
-          component={HomeScreen} 
+          name="Journals" 
+          component={Journals} 
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Journals',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
+              <Ionicons name="book-outline" size={24} color="black" />
             ),
           }}
         />
         <Tab.Screen 
-          name="Home" 
-          component={HomeScreen} 
+          name="MoodEntry" 
+          component={MoodEntry} 
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'MoodEntry',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
+              <Ionicons name="add-circle-outline" size={24} color="black" />
             ),
           }}
         />
         <Tab.Screen 
-          name="Home" 
-          component={HomeScreen} 
+          name="Calendar" 
+          component={Calendar} 
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Calendar',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
+              <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}
         />
         <Tab.Screen 
-          name="Home" 
-          component={HomeScreen} 
+          name="Settings" 
+          component={Settings} 
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Settings',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={24} color="black" />
+              <Ionicons name="settings-outline" size={24} color="black" />
             ),
           }}
-        /> */}
-        <Tab.Screen name="ArgHomeScreen" component={ArgHomeScreen} />
+        />
+        {/* <Tab.Screen name="ArgHomeScreen" component={ArgHomeScreen} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
