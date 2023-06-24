@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import PlayholderWooper from "../../assets/images/placeholder_wooper.png";
 
@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
 
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('ArgHomeScreen')}>
+        onPress={() => navigation.navigate('SignIn')}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
     </View>

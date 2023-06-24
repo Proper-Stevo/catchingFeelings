@@ -3,7 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import HomeScreen from "./src/screens/HomeScreen.js"
+import HomeStackScreen from "./src/navigation/HomeStackScreen.js"
+
 import Journals from "./src/screens/Journals.js"
 import MoodEntry from "./src/screens/MoodEntry.js"
 import Calendar from "./src/screens/Calendar.js"
@@ -13,16 +14,17 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
-    <NavigationContainer >
+    <NavigationContainer>
       <Tab.Navigator 
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
+        headerShown: false,
       }}
       >
         <Tab.Screen 
           name="Home" 
-          component={HomeScreen} 
+          component={HomeStackScreen} 
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
