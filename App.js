@@ -44,7 +44,7 @@ function App() {
           name="MoodEntry" 
           component={MoodEntry} 
           options={{
-            tabBarLabel: 'MoodEntry',
+            tabBarLabel: 'Add Entry',
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="add-circle-outline" size={24} color="black" />
             ),
@@ -70,7 +70,6 @@ function App() {
             ),
           }}
         />
-        {/* <Tab.Screen name="ArgHomeScreen" component={ArgHomeScreen} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
