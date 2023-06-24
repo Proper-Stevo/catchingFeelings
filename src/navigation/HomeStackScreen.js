@@ -15,9 +15,6 @@ export default function HomeStackScreen() {
         options={{ 
           title: 'My home',
           headerShown: false,
-          // headerStyle: {
-          //   backgroundColor: '#BA90C6',
-          // },
           }}/>
       <HomeStack.Screen name="SignIn" component={SignIn} options={{ title: 'Sign In' }}/>
       <HomeStack.Screen name="SignUp" component={SignUp} options={{ title: 'Sign Up' }}/>

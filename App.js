@@ -3,12 +3,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+import HomeStackScreen from "./src/navigation/HomeStackScreen.js"
+
 import Journals from "./src/screens/Journals.js"
 import MoodEntry from "./src/screens/MoodEntry.js"
 import Calendar from "./src/screens/Calendar.js"
 import Settings from "./src/screens/Settings.js"
-
-import HomeStackScreen from "./src/navigation/HomeStackScreen.js"
 
 const Tab = createBottomTabNavigator();
 
