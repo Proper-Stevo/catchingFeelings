@@ -1,13 +1,19 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Slider } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+
 
 export default function MoodEntry() {
   const [selectedMood, setSelectedMood] = useState('Mood');
+  const [selectedLevel, setSelectedLevel] = useState(1);
 
   const handleMoodChange = (value) => {
     setSelectedMood(value);
+    console.log(value);
+  };
+
+  const handleLevelChange = (value) => {
+    setSelectedLevel(value);
     console.log(value);
   };
 
@@ -19,11 +25,21 @@ export default function MoodEntry() {
         selectedValue={selectedMood}
         onValueChange={handleMoodChange}
       >
-        <Picker.Item label='Mood' value="Mood"/>
+        <Picker.Item label='Mood' value="Mood" />
         <Picker.Item label="Happy" value="Happy" />
         <Picker.Item label="Sad" value="Sad" />
         <Picker.Item label="Angry" value="Angry" />
       </Picker>
+      <Text>What Level?</Text>
+      <Slider
+        style={{ width: 300 }}
+        minimumValue={1}
+        maximumValue={10}
+        step={1}
+        value={selectedLevel}
+        onValueChange={handleLevelChange}
+      />
+      <Text>{selectedLevel}</Text>
     </View>
   );
 }
